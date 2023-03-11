@@ -1,10 +1,15 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import styled from "@emotion/styled/macro";
+import tw from "twin.macro";
+
+const StyleDiv = styled.div`
+  background: green;
+  font-size: 5rem;
+`
 
 const Home : NextPage = () => {
   const router = useRouter();
@@ -17,11 +22,10 @@ const Home : NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
+        <StyleDiv>
           <Link href={'./calendarPage'}>GOGO</Link>
-          <a onClick={()=>router.push('./calendarPage')}>Go Calendar</a>
-
-        </div>
+          {/* <a onClick={()=>router.push('./calendarPage')}>Go Calendar</a> */}
+        </StyleDiv>
       </main>
     </>
   )
