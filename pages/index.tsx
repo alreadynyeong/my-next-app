@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 const Home : NextPage = () => {
   const router = useRouter();
@@ -17,9 +18,7 @@ const Home : NextPage = () => {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          {/* <Link href={'./calendarPage'}>
-            <a>GO PAGE</a>
-          </Link> */}
+          <Link href={'./calendarPage'}>GOGO</Link>
           <a onClick={()=>router.push('./calendarPage')}>Go Calendar</a>
 
         </div>
