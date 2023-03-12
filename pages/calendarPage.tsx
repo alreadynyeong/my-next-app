@@ -3,6 +3,14 @@ import moment from "moment";
 import Link from "next/link";
 import React, {useState} from "react";
 
+import TodoList from '../components/todoList';
+
+const dummyData = [
+    {id: 1, title: "One", complete: true, date: '2023-03-12'},
+    {id: 2, title: "Two", complete: true, date: '2023-03-12' },
+    {id: 3, title: "Three", complete: false, date: '2023-03-12'}
+  ]
+
 interface DateData {
     full: string;
     date: string;
@@ -20,13 +28,20 @@ const CalendarPage : NextPage = () => {
 
   return (
     <>
-     <p>HI CalendarPage</p>
      <div>
         <button onClick={movePrevMonth}>이전달</button>
         <span>{selected.format("YYYY.MM월")}</span>
         <button onClick={moveNextMonth}>다음달</button>
         <MonthCalendar selected={selected} />
      </div>
+     {dummyData.map((data, index) => (
+        <TodoList 
+        key={index}
+        id={data.id}
+        title={data.title}
+        date={data.date}
+        complete={data.complete} />
+     ))}
     </>
   )
 }
